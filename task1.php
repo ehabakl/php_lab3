@@ -97,12 +97,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
 
-    echo "Name:".$_POST['name']."<br>";
-    echo "Email:".$_POST['email']."<br>";
-    echo "Group #:".$_POST['group']."<br>";
-    echo "Class details:".$_POST['class_details']."<br>";
-    echo "gender:".$_POST['gender']."<br>";
-    echo "your courses are:".$_POST['courses']."<br>";
+ echo "Name : ".$_POST["name"]."<br>" ;
+        echo "E-mail : ".$_POST["email"]."<br>" ;
+        echo "Group # : ".$_POST["group"]."<br>" ;
+        echo "Class details : ".$_POST["class_details"]."<br>" ;
+        echo "Gender : ".$_POST["gender"]."<br>" ;
+        if(isset($_POST['courses'])) {
+          echo "Your Courses :" ;
+          foreach ($_POST['courses'] as $selectedOption) {
+              echo $selectedOption." ";
+          }
+        }
+
 
 
 
